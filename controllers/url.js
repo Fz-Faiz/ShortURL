@@ -1,7 +1,8 @@
 const shortId =require("shortid");
 
 const URL = require("../models/url");
-const shortid = require("shortid");
+
+
 
 async function handleGenerateNewShortURL(req,res){
     const body = req.body;
@@ -14,7 +15,10 @@ async function handleGenerateNewShortURL(req,res){
         visited:[]
 
     })
-    return res.json( {id:shortid})
+    
+    return res.render("home",{
+        id:shortid,
+    })
 }
 
 async function handleGetAnalytics(req,res){
